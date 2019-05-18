@@ -14,5 +14,5 @@
 	@include('layouts.sections.index.course_progress')
 	@include('layouts.sections.about.our-teachers')
 	@include(base_url.'latest-event-slider')
-	
+	@include('layouts.sections.index.subscribe')
 @endsection

@@ -1,5 +1,6 @@
-<!-- Course Finder  ______________________________ -->
-	        <div class="course-search-option wow fadeInUp">
+			<!-- Course Finder  ______________________________ -->
+	        <div class="course-search-option wow fadeInUp" @if(\Request::is('courses-offered'))
+			style="background: #ededed;" @endif>
 	        	<div class="container">
 	        		<form action="#">
 	        			<div class="row">

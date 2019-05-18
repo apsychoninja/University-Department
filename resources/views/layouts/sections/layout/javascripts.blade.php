@@ -37,3 +37,19 @@
 
 		<!-- Theme js -->
 		<script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+
+	<script type="text/javascript">
+		
+$(document).ready(function(){
+			
+	$('#newsTicker15').breakingNews({
+		position : 'fixed-bottom',
+		borderWidth: 3,
+		height: 50,
+		themeColor: '#ce2525'
+	});
+
+});
+
+	</script>
