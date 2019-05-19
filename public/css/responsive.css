@@ -1,12 +1,12 @@
 /* Responsive CSS Document */
 
-/* 
-    Created on : 07/09/2016. 
+/*
+    Created on : 07/09/2016.
     Theme Name : Education.
     Description: Education- Responsive html5 template.
     Version    : 1.0.
     Author     : @TheMazine.
-   
+
 */
 
 
@@ -18,7 +18,7 @@
 	}
 }
 @media (max-width: 1366px) {
-    .scroll-top {bottom: 30px; right:30px;}
+    .scroll-top {bottom: 60px; right:30px;}
 }
 @media (max-width: 1199px) {
     header .top-header div.right-side,header .top-header div.left-side {float: none; text-align: center;}
@@ -214,7 +214,7 @@
 
 @media (max-width: 450px) {
    header .top-header div.left-side>ul>li {width:100%;float:left;text-align: left;}
-   
+
 }
 
 @media (max-width: 380px) {
