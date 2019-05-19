@@ -8,9 +8,9 @@
 
 	<?php define('base_url', 'layouts.sections.about.'); ?>
 
-	@include(base_url.'inner-banner')
-	@include('layouts.sections.facultymembers.ourteachers')
-	@include('layouts.sections.about.latest-event-slider')
-	@include('layouts.sections.index.subscribe')
+	@component(base_url.'inner-banner')@endcomponent
+	@component('layouts.sections.facultymembers.ourteachers')@endcomponent
+	@component('layouts.sections.about.latest-event-slider')@endcomponent
+	@component('layouts.sections.index.subscribe')@endcomponent
 	
 @endsection

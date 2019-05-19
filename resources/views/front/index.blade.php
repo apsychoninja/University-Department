@@ -8,16 +8,17 @@
 
 	<?php define('BASE_URL', 'layouts.sections.index.'); ?>
 
-	@include(BASE_URL.'banner')
-	@include(BASE_URL.'manage_section')
-	@include(BASE_URL.'course_finder')
-	@include(BASE_URL.'welcome')
-	@include(BASE_URL.'popular_course')
-	@include(BASE_URL.'course_progress')
-	@include(BASE_URL.'events')
-	@include(BASE_URL.'information-parallax')
-	@include(BASE_URL.'latest-news')
-	@include(BASE_URL.'test-faq')
-	@include(BASE_URL.'subscribe')
+	@component('layouts.sections.index.banner')@endcomponent
+	@component(BASE_URL.'manage_section')@endcomponent
+
+	@component(BASE_URL.'course_finder')@endcomponent
+	@component(BASE_URL.'welcome')@endcomponent
+	@component(BASE_URL.'popular_course')@endcomponent
+	@component(BASE_URL.'course_progress')@endcomponent
+	@component(BASE_URL.'events')@endcomponent
+	@component(BASE_URL.'information-parallax')@endcomponent
+	@component(BASE_URL.'latest-news')@endcomponent
+	@component(BASE_URL.'test-faq')@endcomponent
+	@component(BASE_URL.'subscribe')@endcomponent
 	
 @endsection

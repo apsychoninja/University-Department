@@ -20,10 +20,20 @@ Route::get('/faculty-members', 'FrontController@facultymembers')->name('faculty-
 Route::get('/blog','FrontController@blog')->name('blog');
 Route::get('/contact','FrontController@contact')->name('contact');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin')->group(function(){
+	Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
+	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');
+	Route::get('/', 'AdminController@index')->name('admin.dashboard');
+	 
+	//Password Reset Routes
+	 Route::post('/password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+	 Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+	 Route::post('/password/reset','Auth\AdminResetPasswordController@reset')->name('admin.password.update');
+	 Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
+
+});

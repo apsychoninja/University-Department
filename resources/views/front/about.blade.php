@@ -8,11 +8,13 @@
 
 	<?php define('base_url', 'layouts.sections.about.'); ?>
 
-	@include(base_url.'inner-banner')
-	@include('layouts.sections.index.welcome')
-	@include('layouts.sections.index.course_finder')
-	@include('layouts.sections.index.course_progress')
-	@include('layouts.sections.about.our-teachers')
-	@include(base_url.'latest-event-slider')
-	@include('layouts.sections.index.subscribe')
+	@component(base_url.'inner-banner')@endcomponent
+	@component('layouts.sections.index.welcome')@endcomponent
+	@component('layouts.sections.index.course_finder')@endcomponent
+	@component('layouts.sections.index.course_progress')@endcomponent
+	@component(base_url.'our-teachers')@endcomponent
+	@component(base_url.'latest-event-slider')@endcomponent
+	@component('layouts.sections.index.subscribe')@endcomponent
+
+
 @endsection

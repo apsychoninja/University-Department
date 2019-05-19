@@ -8,7 +8,7 @@
 
 	<?php define('base_url', 'layouts.sections.about.'); ?>
 
-	@include(base_url.'inner-banner')
-	@include('layouts.sections.blog.blog')
-	@include('layouts.sections.index.subscribe')
+	@component(base_url.'inner-banner')@endcomponent
+	@component('layouts.sections.blog.blog')@endcomponent
+	@component('layouts.sections.index.subscribe')@endcomponent
 @endsection

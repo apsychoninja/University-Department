@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-	@include('layouts.sections.about.inner-banner')
-	@include('layouts.sections.recent-events.recent-events')
-	@include('layouts.sections.index.subscribe')
+	@component('layouts.sections.about.inner-banner')@endcomponent
+	@component('layouts.sections.recent-events.recent-events')@endcomponent
+	@component('layouts.sections.index.subscribe')@endcomponent
 @endsection

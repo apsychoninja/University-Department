@@ -5,12 +5,11 @@
 @endsection
 
 @section('content')
-	@include('layouts.sections.about.inner-banner')
-	<div class="course-page-single course-v1" @if(\Request::is('courses-offered'))
-			style="background: #ededed;" @endif>
-		@include('layouts.sections.index.course_finder')
-		@include('layouts.sections.courses.courses')
-		@include('layouts.sections.courses.latest-events')
-		@include('layouts.sections.index.subscribe')
+	@component('layouts.sections.about.inner-banner')@endcomponent
+	<div class="course-page-single course-v1" @if(\Request::is('courses-offered')) style="background: #ededed;" @endif>
+		@component('layouts.sections.index.course_finder')@endcomponent
+		@component('layouts.sections.courses.courses')@endcomponent
+		@component('layouts.sections.courses.latest-events')@endcomponent
+		@component('layouts.sections.index.subscribe')@endcomponent
 	</div>
 @endsection
