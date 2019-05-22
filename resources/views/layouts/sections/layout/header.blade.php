@@ -6,15 +6,30 @@
 		<div class="container">
 			<div class="left-side float-left">
 				<ul>
-					<li><span class="icon round-border"><i class="fas fa-map-marker-alt coloricons"></i></span><a href="" class="trans3s">45/12 Best Avenue Street,  UK 2450, US</a></li>
-					<li><span class="icon round-border"><i class="far fa-envelope coloricons"></i></span><a href="" class="trans3s">info@edutech.com</a></li>
-					<li><span class="icon round-border"><i class="fas fa-phone-volume gly-rotate-45 coloricons"></i></span><a href="" class="trans3">+8801712570051</a></li>
+					<li><span class="icon round-border"><i class="fas fa-map-marker-alt coloricons"></i></span><a href="" class="trans3s">@lang('sentence.address')</a></li>
+					<li><span class="icon round-border"><i class="far fa-envelope coloricons"></i></span><a href="" class="trans3s">@lang('sentence.email')</a></li>
+					<li><span class="icon round-border"><i class="fas fa-phone-volume gly-rotate-45 coloricons"></i></span><a href="" class="trans3">@lang('sentence.phone')</a></li>
 					<li><span class="icon round-border"><i class="fas fa-globe coloricons"></i></span>
-						<select class="selectpicker">
-							<option value="English">English</option>
-							<option value="Spanish">Spanish</option>
-							<option value="L'italiano">L'italiano</option>
-						</select>
+
+						 <div class="dropdown lang">
+						  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						  	@switch(app()->getLocale())
+						  		@case("en")
+						  			<span class="flag-icon flag-icon-gb"></span> English
+						  			@break
+					  			@case("it")
+					  				<span class="flag-icon flag-icon-it"></span> Italiano
+					  				@break
+				  				@default
+				  					<i class="fa fa-language" aria-hidden="true"></i> Language
+				  			@endswitch						    
+						    <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						    <li class="droplang"><a href="locale/en"> <span class="flag-icon flag-icon-gb"></span>  English</a></li>
+						    <li class="droplang"><a href="locale/it"> <span class="flag-icon flag-icon-it"></span> Italiano</a></li>
+						  </ul>
+						</div>
 					</li>
 				</ul>
 			</div><!-- /.left-side -->
@@ -33,7 +48,7 @@
 			<div class="container">
 				<div class="logo float-left"><a href="{{ route('index') }}" style="vertical-arlign:middle;"><img src="{{ asset('images/logo/logo.png') }}" alt="{{ config('app.name') }}"></a></div>
 				<form action="#" class="float-right">
-					<input type="text" placeholder="Search">
+					<input type="text" placeholder="@lang('sentence.search')">
 					<button><i class="fa fa-search-minus" aria-hidden="true"></i></button>
 				</form>
 				<!-- Menu -->
@@ -41,7 +56,7 @@
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
+							<span class="sr-only">@lang('sentence.Toggle_navigation')</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -49,27 +64,30 @@
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="navbar-collapse-1">
+						@if(app()->getLocale() =='it')
+							<style type="text/css">ul.nav.navbar-nav {   font-size: 13px;}</style>
+						@endif
 						<ul class="nav navbar-nav">
-							<li class="{{ (\Request::is('/')) ? 'current-page-item' : '' }}"><a href="{{ route('index') }}">Home</a></li>
-							<li class="{{ (\Request::is('about')) ? 'current-page-item' : '' }}"><a href="{{ route('about') }}">About</a>
+							<li class="{{ (\Request::is('/')) ? 'current-page-item' : '' }}"><a href="{{ route('index') }}">@lang('sentence.home')</a></li>
+							<li class="{{ (\Request::is('about')) ? 'current-page-item' : '' }}"><a href="{{ route('about') }}">@lang('sentence.about_us')</a>
 
 							</li>
-							<li class="{{ (\Request::is('out-teachers')) ? 'current-page' : '' }} dropdown-holder"><a href="#">Department</a>
+							<li class="{{ (\Request::is('out-teachers')) ? 'current-page' : '' }} dropdown-holder"><a href="#">@lang('sentence.department')</a>
 								<ul class="sub-menu">
-									<li><a href="{{ route('faculty-members') }}" class="tran3s dropdown-holder">Our Faculty Members</a></li>
-									<li><a href="#" class="tran3s">Time Table</a></li>
+									<li><a href="{{ route('faculty-members') }}" class="tran3s dropdown-holder">@lang('sentence.our_faculty_members')</a></li>
+									<li><a href="#" class="tran3s">@lang('sentence.time_table')</a></li>
 								</ul>
 							</li>
-							<li class="{{ (\Request::is('recent-events') || \Request::is('upcoming-events')) ? 'current-page-item' : '' }} dropdown-holder"><a href="#">Events</a>
+							<li class="{{ (\Request::is('recent-events') || \Request::is('upcoming-events')) ? 'current-page-item' : '' }} dropdown-holder"><a href="#">@lang('sentence.events')</a>
 								<ul class="sub-menu">
-									<li><a href="{{ route('recent-events') }}" class="tran3s">Recent Events</a></li>
-									<li><a href="{{ route('upcoming-events') }}" class="tran3s">Upcoming Events</a></li>
+									<li><a href="{{ route('recent-events') }}" class="tran3s">@lang('sentence.recent_events')</a></li>
+									<li><a href="{{ route('upcoming-events') }}" class="tran3s">@lang('sentence.upcoming_events')</a></li>
 								</ul>
 							</li>
-							<li class="{{ (\Request::is('courses-offered')) ? 'current-page-item' : '' }} dropdown-holder"><a href="{{ route('courses-offered') }}">Courses</a></li>
+							<li class="{{ (\Request::is('courses-offered')) ? 'current-page-item' : '' }} dropdown-holder"><a href="{{ route('courses-offered') }}">@lang('sentence.courses')</a></li>
 
-							<li class="{{ (\Request::is('blog')) ? 'current-page-item' : '' }}"><a href="{{ route('blog') }}">Blog</a></li>
-							<li class="{{ (\Request::is('contact')) ? 'current-page-item' : '' }}"><a href="{{ route('contact') }}">Contact Us</a></li>
+							<li class="{{ (\Request::is('blog')) ? 'current-page-item' : '' }}"><a href="{{ route('blog') }}">@lang('sentence.blog')</a></li>
+							<li class="{{ (\Request::is('contact')) ? 'current-page-item' : '' }}"><a href="{{ route('contact') }}">@lang('sentence.contact_us')</a></li>
 						</ul>
 					</div> <!-- /.navbar-collapse -->
 				</nav>
@@ -78,16 +96,14 @@
 	</div>
 </header>
 <div class="bn-breaking-news" id="newsTicker15">
-			    	<div class="bn-label" style="background: rgb(206, 37, 37);">UPDATES</div>
+			    	<div class="bn-label" style="background: rgb(206, 37, 37);">@lang('sentence.updates')</div>
 			    	<div class="bn-news" style="left: 68.3906px; right: 0px;">
 			    		<ul style="width: 3537.99px; margin-left: -86px;">
 			    			
 			    			
-			    			<li><a href="#">1.3. Lorem Ipsum is simply dummy text of the printing and typesetting industry</a></li>
-			    			<li><a href="#">1.4. Lorem simply dummy text of the printing and typesetting industry</a></li>
-			    			<li><a href="#">1.5. Ipsum is simply dummy of the printing and typesetting industry</a></li>
-			    			<li><a href="#">1.6. Lorem Ipsum simply dummy text of the printing and typesetting industry</a></li>
-			    			<li><a href="#">1.7. Ipsum is simply dummy text of the printing typesetting industry</a></li><li><a href="#">1.1. There many variations of passages of Lorem Ipsum available</a></li><li><a href="#">1.2. Ipsum is simply dummy text of the printing and typesetting industry</a></li>
+			    			<li><a href="#">1.1. @lang('sentence.update_1')</a></li>
+			    			<li><a href="#">1.2. @lang('sentence.update_2')</a></li>
+			    			<li><a href="#">1.3. @lang('sentence.update_3')</a></li>
 			    		</ul>
 			    	</div>
 			    	

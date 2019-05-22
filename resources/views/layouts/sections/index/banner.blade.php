@@ -29,7 +29,7 @@
 										data-splitout="none" 
 										data-responsive_offset="on" 
 										style="z-index: 6; white-space: nowrap;">
-										<h5>for hundreds of successful student here </h5>
+										<h5>@lang('index_page.heading_slide_1')</h5>
 									</div>
 
 									<!-- LAYER NR. 2 -->
@@ -50,7 +50,7 @@
 										data-splitout="none" 
 										data-responsive_offset="on" 
 										style="z-index: 6; white-space: nowrap;">
-										<h1>Education is a <span class="p-color">backbone</span> <br>of life</h1>
+										<h1>@lang('index_page.heading_slide_1.1')<span class="p-color"> backbone</span> <br>of life</h1>
 									</div>
 
 

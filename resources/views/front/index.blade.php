@@ -1,11 +1,10 @@
 @extends('layouts.main')
 
 @section('title')
-	Home
+	@lang('sentence.home')
 @endsection
 
 @section('content')
-
 	<?php define('BASE_URL', 'layouts.sections.index.'); ?>
 
 	@component('layouts.sections.index.banner')@endcomponent

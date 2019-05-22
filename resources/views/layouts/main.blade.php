@@ -29,7 +29,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/icon/font/flaticon.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/lato-semibold/stylesheet.css') }}">
     <link rel="stylesheet" href="src/css/ideabox-news-ticker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 
     <!-- responsive  -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">

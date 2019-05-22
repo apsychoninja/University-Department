@@ -3321,3 +3321,17 @@ i.far.fa-gem{
 .carousel-indicators {
     bottom: 6px !important;
 }
+
+.dropdown.lang {
+    margin-top: -36px;
+    margin-left: 51px;
+}
+
+li.droplang {
+    padding-right: 90px;
+}
+
+i.fa.fa-language {
+    width: 25px;
+    height: 10px !important;
+}

@@ -20,12 +20,15 @@ Route::get('/faculty-members', 'FrontController@facultymembers')->name('faculty-
 Route::get('/blog','FrontController@blog')->name('blog');
 Route::get('/contact','FrontController@contact')->name('contact');
 
+Route::get('locale/{locale}','FrontController@locale')->name('locale');
 
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function(){
+
+	//Admin Login Pages
 	Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');
 	Route::get('/', 'AdminController@index')->name('admin.dashboard');

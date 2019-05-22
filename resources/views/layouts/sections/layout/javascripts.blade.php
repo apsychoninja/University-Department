@@ -52,4 +52,17 @@ $(document).ready(function(){
 
 });
 
+
+$(document).on("change","select",function(){
+  $("option[value=" + this.value + "]", this)
+  .attr("selected", true).siblings()
+  .removeAttr("selected")
+});
 	</script>
+
+	<script id="rendered-js">
+      $(function () {
+  $('.selectpicker').selectpicker();
+});
+      //# sourceURL=pen.js
+    </script>

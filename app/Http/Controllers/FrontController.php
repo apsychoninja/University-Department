@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
 
 class FrontController extends Controller
 {
@@ -41,5 +42,11 @@ class FrontController extends Controller
 
     public function contact(){
         return view('front.contact');
+    }
+
+
+    public function locale($locale){
+        Session::put('locale',$locale);
+        return redirect()->back();
     }
 }
