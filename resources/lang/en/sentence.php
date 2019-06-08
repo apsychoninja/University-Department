@@ -53,5 +53,6 @@ return [
 	'footer_courses_for_free_ged'=>'Courses For Free GED',
 	'footer_copyright'=>'Copyright',
 	'footer_designed_by'=>'Designed By',
+	'department_of_cs_and_it'=>'Department of CS and IT',
 	
 ];

@@ -15,6 +15,13 @@ return [
 
     'heading_slide_1'=>'for hundreds of successful students here',
     'heading_slide_1.1'=>'Education is a',
-        
+    'heading_slide_1.2'=>'Backbone',
+    'of_life'=>'Of Life',
+    'view_courses'=>'View Courses',
+    'buy_now'=>'Buy Now',
+    'for_hundreds_of_successful_student_here'=>'for hundreds of successful student here '
+    'meet_your_new'=>'Meet Your New',
+    'community'=>'Community',
+    'learn_education'=>'Learn Education',
     
 ];

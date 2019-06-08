@@ -27,7 +27,7 @@
 						  </button>
 						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 						    <li class="droplang"><a href="locale/en"> <span class="flag-icon flag-icon-gb"></span>  English</a></li>
-						    <li class="droplang"><a href="locale/it"> <span class="flag-icon flag-icon-it"></span> Italiano</a></li>
+						    {{-- <li class="droplang"><a href="locale/it"> <span class="flag-icon flag-icon-it"></span> Italiano</a></li> --}}
 						  </ul>
 						</div>
 					</li>
@@ -68,26 +68,26 @@
 							<style type="text/css">ul.nav.navbar-nav {   font-size: 13px;}</style>
 						@endif
 						<ul class="nav navbar-nav">
-							<li class="{{ (\Request::is('/')) ? 'current-page-item' : '' }}"><a href="{{ route('index') }}">@lang('sentence.home')</a></li>
-							<li class="{{ (\Request::is('about')) ? 'current-page-item' : '' }}"><a href="{{ route('about') }}">@lang('sentence.about_us')</a>
+							<li class="{{ (\Request::is('/')) ? 'current-page-item' : '' }}"><a href="{{ route('index') }}">Home</a></li>
+							<li class="{{ (\Request::is('about')) ? 'current-page-item' : '' }}"><a href="{{ route('about') }}">About Us</a>
 
 							</li>
-							<li class="{{ (\Request::is('out-teachers')) ? 'current-page' : '' }} dropdown-holder"><a href="#">@lang('sentence.department')</a>
+							<li class="{{ (\Request::is('out-teachers')) ? 'current-page' : '' }} dropdown-holder"><a href="#">Department</a>
 								<ul class="sub-menu">
-									<li><a href="{{ route('faculty-members') }}" class="tran3s dropdown-holder">@lang('sentence.our_faculty_members')</a></li>
-									<li><a href="#" class="tran3s">@lang('sentence.time_table')</a></li>
+									<li><a href="{{ route('faculty-members') }}" class="tran3s dropdown-holder">Our Faculty Members</a></li>
+									<li><a href="#" class="tran3s">Time Table</a></li>
 								</ul>
 							</li>
-							<li class="{{ (\Request::is('recent-events') || \Request::is('upcoming-events')) ? 'current-page-item' : '' }} dropdown-holder"><a href="#">@lang('sentence.events')</a>
+							<li class="{{ (\Request::is('recent-events') || \Request::is('upcoming-events')) ? 'current-page-item' : '' }} dropdown-holder"><a href="#">Events</a>
 								<ul class="sub-menu">
-									<li><a href="{{ route('recent-events') }}" class="tran3s">@lang('sentence.recent_events')</a></li>
-									<li><a href="{{ route('upcoming-events') }}" class="tran3s">@lang('sentence.upcoming_events')</a></li>
+									<li><a href="{{ route('recent-events') }}" class="tran3s">Recent Events</a></li>
+									<li><a href="{{ route('upcoming-events') }}" class="tran3s">Upcoming Events</a></li>
 								</ul>
 							</li>
-							<li class="{{ (\Request::is('courses-offered')) ? 'current-page-item' : '' }} dropdown-holder"><a href="{{ route('courses-offered') }}">@lang('sentence.courses')</a></li>
+							<li class="{{ (\Request::is('courses-offered')) ? 'current-page-item' : '' }} dropdown-holder"><a href="{{ route('courses-offered') }}">Courses</a></li>
 
-							<li class="{{ (\Request::is('blog')) ? 'current-page-item' : '' }}"><a href="{{ route('blog') }}">@lang('sentence.blog')</a></li>
-							<li class="{{ (\Request::is('contact')) ? 'current-page-item' : '' }}"><a href="{{ route('contact') }}">@lang('sentence.contact_us')</a></li>
+							<li class="{{ (\Request::is('blog')) ? 'current-page-item' : '' }}"><a href="{{ route('blog') }}">Blog</a></li>
+							<li class="{{ (\Request::is('contact')) ? 'current-page-item' : '' }}"><a href="{{ route('contact') }}">Contact us</a></li>
 						</ul>
 					</div> <!-- /.navbar-collapse -->
 				</nav>

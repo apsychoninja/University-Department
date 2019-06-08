@@ -52,5 +52,6 @@ return [
 	'footer_courses_for_free_ged'=>'Corsi Gratuiti Per GED',
 	'footer_copyright'=>'Diritto d\'autore',
 	'footer_designed_by'=>'Progettato da',
-	
+	'department_of_cs_and_it'=>'CS e dipartimento IT',
+
 ];

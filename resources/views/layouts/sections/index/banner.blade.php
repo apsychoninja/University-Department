@@ -29,7 +29,7 @@
 										data-splitout="none" 
 										data-responsive_offset="on" 
 										style="z-index: 6; white-space: nowrap;">
-										<h5>@lang('index_page.heading_slide_1')</h5>
+										<h5>for hundreds of successful students here</h5>
 									</div>
 
 									<!-- LAYER NR. 2 -->
@@ -50,7 +50,7 @@
 										data-splitout="none" 
 										data-responsive_offset="on" 
 										style="z-index: 6; white-space: nowrap;">
-										<h1>@lang('index_page.heading_slide_1.1')<span class="p-color"> backbone</span> <br>of life</h1>
+										<h1>Education is a<span class="p-color">Backbone</span> <br>of life.</h1>
 									</div>
 
 
@@ -66,7 +66,7 @@
 										data-splitin="none" 
 										data-splitout="none" 
 										data-responsive_offset="on">
-										<a href="course-v1.html" class="course-button">View courses</a>
+										<a href="course-v1.html" class="course-button">View Courses</a>
 									</div>
 									
 									<!-- LAYER NR. 4 -->
@@ -81,7 +81,7 @@
 										data-splitin="none" 
 										data-splitout="none" 
 										data-responsive_offset="on">
-										<a href="contact-us.html" class="buy-button p-color-bg">BUY NOW</a>
+										<a href="contact-us.html" class="buy-button p-color-bg">Buy Now</a>
 									</div>
 								
 								</li>

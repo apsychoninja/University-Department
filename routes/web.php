@@ -28,6 +28,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function(){
 
+	/*Front End Pages*/
+	
+	/*Profile Page*/
+	Route::get('profile','AdminFrontController@profile')->name('admin.profile');	
+
+
 	//Admin Login Pages
 	Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');

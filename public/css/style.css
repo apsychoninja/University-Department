@@ -3335,3 +3335,21 @@ i.fa.fa-language {
     width: 25px;
     height: 10px !important;
 }
+
+i.fas.fa-globe.coloricons {
+    margin-top: 5px !important;
+    padding-top: 5px;
+}
+
+li.bg-success:nth-child(18) {
+    display: none !important;
+}
+
+.bg-success {
+    background-color: #dff0d8;
+    display: none;
+}
+
+.pull-left.info {
+    margin-top: -9px;
+}
