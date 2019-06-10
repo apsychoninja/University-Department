@@ -17,9 +17,15 @@ class CreateAdminsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('avatar')->default('default.jpg');
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('avatar')->default('default.jpg');
+            $table->string('job_title');
+            $table->string('location');
+            $table->string('education');
+            $table->string('fb_url');
+            $table->string('linkedin_url');
+            $table->string('experience');
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

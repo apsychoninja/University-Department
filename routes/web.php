@@ -21,19 +21,26 @@ Route::get('/blog','FrontController@blog')->name('blog');
 Route::get('/contact','FrontController@contact')->name('contact');
 
 Route::get('locale/{locale}','FrontController@locale')->name('locale');
-
+Route::get('/logout', 'Auth\LoginController@logout')->name('logoutt');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function(){
 
+
+	Route::get('delete/{id}','AdminFrontController@destroy')->name('admin.destroy');
+	Route::PATCH('edit/{id}','AdminFrontController@update');
 	/*Front End Pages*/
 	
 	/*Profile Page*/
 	Route::get('profile','AdminFrontController@profile')->name('admin.profile');	
+	Route::Post('profile','AdminFrontController@update_avatar')->name('admin.update_avatar');
 
 
+	/*Administrators Table*/
+	Route::get('all-admins','AdminFrontController@all_admins')->name('admins.list');
+	
 	//Admin Login Pages
 	Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');

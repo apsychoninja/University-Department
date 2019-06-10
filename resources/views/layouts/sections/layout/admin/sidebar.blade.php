@@ -26,7 +26,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="{{ (\Request::is('admin')) ? 'active' : '' }} treeview"><a href="{{ route('admin.dashboard') }}"><i class="fas fa-tachometer-alt"></i> &nbsp; <span>Dashboard</span></a></li>
+        <li class="{{ (\Request::is('admin')) ? 'active' : '' }}"><a href="{{ route('admin.dashboard') }}"><i class="fas fa-tachometer-alt"></i> &nbsp; <span>Dashboard</span></a></li>
 
         <li class="treeview">
           <a href="#">
@@ -61,7 +61,7 @@
           <ul class="treeview-menu">
             <li><a href="pages/charts/chartjs.html"><i class="fas fa-user-graduate"></i> Students</a></li>
             <li><a href="pages/charts/morris.html"><i class="fas fa-user-tie"></i> Faculty Members</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fas fa-chalkboard-teacher"></i> Administrators</a></li>
+            <li><a href="{{ route('admins.list') }}"><i class="fas fa-chalkboard-teacher"></i> Administrators</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -90,7 +90,8 @@
             </li>
           </ul>
         </li>
-        <li class=""><a href="#"><i class="far fa-comment-dots"></i>&nbsp; Messages </a></li>
+        <li class=""><a href="#"><i class="far fa-comment-dots"></i> &nbsp; <span>Messages</span></a></li>
+        
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Blog</span>

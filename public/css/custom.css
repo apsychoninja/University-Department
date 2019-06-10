@@ -1,0 +1,28 @@
+span.fa.fa-fw.fa-eye.field-icon.toggle-password {
+    float: right;
+    margin-left: -25px;
+    margin-right: 12px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
+
+span.fa.fa-fw.field-icon.toggle-password.fa-eye-slash {
+    float: right;
+    margin-left: -25px;
+    margin-right: 12px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
+
+button.btn.btn-info.btn-md {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    float: right;
+    margin-right: 20px;
+}
+
+a i.fas.fa-trash-alt {
+    color: #b21717;
+}

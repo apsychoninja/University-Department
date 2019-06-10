@@ -218,6 +218,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              
               <img src="{{ url('images/uploads/avatars',Auth::Guard('admin')->user()->avatar)  }}" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ Auth::Guard('admin')->user()->name }}</span>
             </a>
@@ -235,26 +236,26 @@
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
+                    <a href="{{ route('admin.profile') }}" class="btn btn-default btn-flat">Profile</a>
                   </div>
-                  <div class="col-xs-4 text-center">
+                  <div class="col-xs-3 text-center">
                     <a href="#">Sales</a>
                   </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
+                  <div class="col-xs-5 text-center signout">
+                    <a href="{{ route('logoutt') }}" class="btn btn-default btn-flat">Sign out</a>
                   </div>
                 </div>
                 <!-- /.row -->
               </li>
               <!-- Menu Footer-->
-              <li class="user-footer">
+              {{-- <li class="user-footer">
                 <div class="pull-left">
                   <a href="{{ route('admin.profile') }}" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="{{ route('logoutt') }}" class="btn btn-default btn-flat">Sign out</a>
                 </div>
-              </li>
+              </li> --}}
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
