@@ -26,8 +26,8 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logoutt');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('admin')->group(function(){
-
+//Route::prefix('admin')->group(function(){
+Route::group(['prefix'=>'admin','middleware'=>['auth:admin']],function(){
 
 	Route::get('delete/{id}','AdminFrontController@destroy')->name('admin.destroy');
 	Route::PATCH('edit/{id}','AdminFrontController@update');
@@ -39,9 +39,15 @@ Route::prefix('admin')->group(function(){
 
 
 	/*Administrators Table*/
+
+	Route::post('all-admins','AdminFrontController@store')->name('admins.post');
+
+});
+
+	Route::prefix('admin')->group(function(){
+
 	Route::get('all-admins','AdminFrontController@all_admins')->name('admins.list');
-	
-	//Admin Login Pages
+		//Admin Login Pages
 	Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');
 	Route::get('/', 'AdminController@index')->name('admin.dashboard');

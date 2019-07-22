@@ -7,6 +7,17 @@
 <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Add New</button>
 
 <div class="col-xs-12">
+		@if(session()->has('success'))
+		<div class="alert alert-success">
+			{{ session()->get('success') }}
+		</div>
+		@endif
+
+		@if(session()->has('delete'))
+		<div class="alert alert-danger">
+				{{ session()->get('delete') }}
+		</div>
+		@endif
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Administrators</h3>
@@ -76,19 +87,32 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Add New Administrator</h4>
       </div>
-      <div class="modal-body">
-      	<form enctype="multipart/form-data" action="{{ route('admin.profile') }}" method='POST'>
-				
-	        <label>Name</label>
-	        <input type="text" name="name"/>
+	  <form enctype="multipart/form-data" action="{{ route('admins.post') }}" method='POST'>
+		@csrf
+		<div class="modal-body">
+			<div class="form-group">
+				<label> Name </label>
+				<input type="text" name="name" class="form-control" placeholder="Enter Your Name">
+			</div>
+			<div class="form-group">
+				<label> Email </label>
+				<input type="email" name="email" class="form-control" placeholder="Enter Email address">
+			</div>
+			<div class="form-group">
+				<label> Password</label>
+				<input type="password" name="password" class="form-control" placeholder="Enter the Password">
+			</div>
+			
 
-    	</form>
+
+
       </div>
       <div class="modal-footer">
-      	<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+      	<button type="submit" class="btn btn-primary" >Save</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
-    </div>
+	</form>
+	</div>
 
   </div>
 </div>

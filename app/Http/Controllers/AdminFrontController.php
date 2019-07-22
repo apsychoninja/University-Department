@@ -87,7 +87,7 @@ class AdminFrontController extends Controller
         /*dd($admin);*/
         $admin->delete();
 
-        return back();
+        return back()->with('delete','User Deleted Successfully');
         //$admin = FindorFail($id);
     }
 
@@ -114,5 +114,22 @@ class AdminFrontController extends Controller
         $admin = Admin::FindOrFail($id)->update($request->all());
         dd($admin);
         /*return redirect()->route('product.index')->with('success','Updated!');*/
+    }
+
+    public function store(Request $request){
+        
+        $this->validate($request,[
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required'
+        ]);
+
+        $admin = new Admin;
+        $admin->name = $request->input('name');
+        $admin->email = $request->input('email');
+        $admin->password = $request->input('password');
+
+        $admin->save();
+        return redirect()->back()->with('success','User Created Successfully.');
     }
 }

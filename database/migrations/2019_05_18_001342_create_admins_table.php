@@ -19,12 +19,12 @@ class CreateAdminsTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('avatar')->default('default.jpg');
-            $table->string('job_title');
-            $table->string('location');
-            $table->string('education');
-            $table->string('fb_url');
-            $table->string('linkedin_url');
-            $table->string('experience');
+            $table->string('job_title')->nullable();
+            $table->string('location')->nullable();
+            $table->string('education')->nullable();
+            $table->string('fb_url')->nullable();
+            $table->string('linkedin_url')->nullable();
+            $table->string('experience')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
