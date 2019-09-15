@@ -59,9 +59,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fas fa-user-graduate"></i> Students</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fas fa-user-tie"></i> Faculty Members</a></li>
-            <li><a href="{{ route('admins.list') }}"><i class="fas fa-chalkboard-teacher"></i> Administrators</a></li>
+            {{-- <li><a href="pages/charts/chartjs.html"><i class="fas fa-user-graduate"></i> Students</a></li> --}}
+            <li><a href="{{ route('admin.faculty') }}"><i class="fas fa-user-tie"></i> &nbsp;Faculty Members</a></li>
+            <li><a href="{{ route('admins.list') }}"><i class="fas fa-chalkboard-teacher"></i> &nbsp;Administrators</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -73,7 +73,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fas fa-compact-disc"></i> Softwares</a></li>
+            <li><a href="{{ route('software.index') }}"><i class="fas fa-compact-disc"></i> Softwares</a></li>
             <li><a href="pages/UI/icons.html"><i class="fas fa-link"></i> Submitted URLs</a></li>
             <li class="treeview">
               <a href="#"><i class="fa fa-table"></i> Time Table

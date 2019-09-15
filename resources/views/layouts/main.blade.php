@@ -63,5 +63,7 @@
             </div>
 
 		@include('layouts/sections/layout/javascripts')
+
+        
 </body>
 </html>

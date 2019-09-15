@@ -37,16 +37,31 @@ Route::group(['prefix'=>'admin','middleware'=>['auth:admin']],function(){
 	Route::get('profile','AdminFrontController@profile')->name('admin.profile');	
 	Route::Post('profile','AdminFrontController@update_avatar')->name('admin.update_avatar');
 
+	/*Faculty Members*/
+	Route::get('faculty','AdminFrontController@faculty')->name('admin.faculty');
+	Route::post('faculty','AdminFrontController@faculty_store')->name('admin.faculty_store');
+	Route::get('faculty/delete/{id}','AdminFrontController@faculty_destroy')->name('admin.faculty_destroy');
 
+	/*Softwares*/
+	Route::resource('software','SoftwareController');
+	Route::get('software/delete/{id}','SoftwareController@destroy')->name('software_destroy');
 	/*Administrators Table*/
 
 	Route::post('all-admins','AdminFrontController@store')->name('admins.post');
+	Route::get('all-admins','AdminFrontController@all_admins')->name('admins.list');
+
+	/*Show Single Admin profile*/
+	//Route::get('all-admins/{id}','AdminFrontController@show')->name('admins.single');
+
+	/*Edit Single Admin profile */
+	Route::PATCH('all-admins/{id}','AdminFrontController@update')->name('admins.update');
+
+	Route::get('all-admins/{id}/edit','AdminFrontController@edit')->name('admins.edit');
 
 });
 
 	Route::prefix('admin')->group(function(){
 
-	Route::get('all-admins','AdminFrontController@all_admins')->name('admins.list');
 		//Admin Login Pages
 	Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');

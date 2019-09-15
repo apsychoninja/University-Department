@@ -26,3 +26,7 @@ button.btn.btn-info.btn-md {
 a i.fas.fa-trash-alt {
     color: #b21717;
 }
+
+.tox-notifications-container {
+    display: none;
+}

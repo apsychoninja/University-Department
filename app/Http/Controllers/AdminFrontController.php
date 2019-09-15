@@ -10,7 +10,8 @@ use Illuminate\Auth\Guard;
 use DB;
 use App\profile;
 use Image;
-
+use Response;
+use App\User;
 
 class AdminFrontController extends Controller
 {
@@ -52,6 +53,7 @@ class AdminFrontController extends Controller
    		if($request->hasFile('avatar')){
     		$avatar = $request->file('avatar');    		
     		$filename = time().'.'.$avatar->getClientOriginalExtension();
+            
 			//$filename = $avatar->getClientOriginalName().'.'.$avatar->getClientOriginalExtension();    		
     		Image::make($avatar)->resize(300,300)->save(public_path('/images/uploads/avatars/'.$filename));
 
@@ -68,7 +70,7 @@ class AdminFrontController extends Controller
     public function all_admins(){
         $admins = DB::table('admins')->get();
 
-        //dd($admins);
+
        //$admins = DB::table('admins')->join('profiles','profiles.admin_id','admins.id')->get();
         return view('admin.administrators',compact('admins'));
     }
@@ -83,12 +85,10 @@ class AdminFrontController extends Controller
     public function destroy($id)
     {
 
-        $admin = Admin::find($id);
-        /*dd($admin);*/
-        $admin->delete();
 
+        $admin = Admin::FindorFail($id);
+        $admin->delete();
         return back()->with('delete','User Deleted Successfully');
-        //$admin = FindorFail($id);
     }
 
 
@@ -99,24 +99,16 @@ class AdminFrontController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {   
+    public function update(Request $request,$id)
+    {       
 
-
-        /*$this->validate($request,[
-            'name'=>'required',
-            'category_id'=>'required',
-            'price'=>'required|min:1|numeric',
-        ]);*/
-
-    
 
         $admin = Admin::FindOrFail($id)->update($request->all());
-        dd($admin);
-        /*return redirect()->route('product.index')->with('success','Updated!');*/
+
+        return redirect()->back()->with('success','Updated!');
     }
 
-    public function store(Request $request){
+    public function store(Request $request,Admin $admin){
         
         $this->validate($request,[
             'name'=>'required',
@@ -124,12 +116,45 @@ class AdminFrontController extends Controller
             'password'=>'required'
         ]);
 
-        $admin = new Admin;
-        $admin->name = $request->input('name');
-        $admin->email = $request->input('email');
-        $admin->password = $request->input('password');
+        Admin::create(request(['name','email','password']));
+        // $admin->name = $request->input('name');
+        // $admin->email = $request->input('email');
+        // $admin->password = $request->input('password');
 
-        $admin->save();
+        // $admin->save();
         return redirect()->back()->with('success','User Created Successfully.');
+
     }
+
+    public function faculty(){
+        $users = DB::table('users')->get();
+        return view('admin.faculty',compact('users'));
+    }
+
+    public function faculty_store(Request $request, User $user){
+        //dd($request);
+        $this->validate($request,[
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required'
+        ]);
+
+        User::create(request(['name','email','password']));
+        return redirect()->back()->with('success','Faculty Member added.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function faculty_destroy($id)
+    {
+        $admin = User::FindorFail($id);
+        $admin->delete();
+        return back()->with('delete','User Deleted Successfully');
+    }
+
+    
 }

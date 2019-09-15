@@ -31,6 +31,8 @@
 
 	<!-- Google Font -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'textarea'});</script>	     
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -65,5 +67,7 @@
 		<div class="control-sidebar-bg"></div>
   	</div>
 	@component('layouts/sections/layout/admin/scripts')@endcomponent
+
+	
 </body>
 </html>

@@ -1,11 +1,10 @@
 @extends('layouts.admin-main')
 @section('title')
-	{{ __('Administrators') }}
+	{{ __('Faculty Members') }}
 @endsection
 @section('dashboard_title')
-  {{ __('Show All Admin Members') }}
+  {{ __('Faculty Members') }}
 @endsection
-
 
 @section('content')
 
@@ -44,24 +43,20 @@
 	                </tr>
                 </thead>
                 <tbody>
-                	
-                	@forelse($admins as $admin)
-
-		                <tr>
-		                  <td>{{ $admin->id }}</td>
-		                  <td><img src="/images/uploads/avatars/{{ $admin->avatar }}" style="width: 30px; height: 30px; border-radius: 50%;" /> &nbsp;{{ $admin->name }}</td>
-		                  <td>{{ $admin->email }}</td>	               
-		                  <td><span class="badge {{ ($admin->job_title == 'Administrator') ? 'bg-red' : 'bg-light-blue' }}">{{ $admin->job_title }}</span></td>
-		                  
-		                  <td>{{ $admin->education }}</td>
-		                  <td>{{ $admin->location }}</td>
-						  <td>{{-- <a href="{{  route('admins.update',$admin->id) }}"> --}}<i class="fas fa-edit" data-admin_id="{{ $admin->id }}" data-toggle="modal" data-name="{{ $admin->name }}" data-email="{{ $admin->email }}" data-password="{{ $admin->password }}" data-target="#edit-modal"></i>{{-- </a> --}}&nbsp;&nbsp;<a href="{{ route('admin.destroy',$admin->id) }}" ><i class="fas fa-trash-alt"></i></a></td>
-		                </tr>
-	            	@empty
-	            		<tr>
-	            			No Records Found.
-	            		</tr>
-	                @endforelse
+                	@forelse($users as $user)
+                	<tr>
+                		<td>{{ $user->id }}</td>
+                		<td>{{ $user->name }}</td>
+                		<td>{{ $user->email }}</td>
+                		<td></td>
+                		<td></td>
+                		<td></td>
+                		<td><a href="#"><i class="fas fa-edit" data-user_id="{{ $user->id }}" data-toggle="modal" data-name="{{ $user->name }}" data-email="{{ $user->email }}" data-password="{{ $user->password }}" data-target="#edit-modal"></i></a>&nbsp;&nbsp;<a href="{{ route('admin.faculty_destroy',$user->id) }}"><i class="fas fa-trash-alt"></i></a></td>
+                	@empty
+                		<tr>
+                			no Records Found.
+                		</tr>
+                	@endforelse
                 </tbody>
                 <tfoot>
 	                <tr>
@@ -92,7 +87,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Add New Administrator</h4>
       </div>
-	  <form enctype="multipart/form-data" action="{{ route('admins.post') }}" method='POST'>
+	  <form enctype="multipart/form-data" action="{{ route('admin.faculty_store') }}" method='POST'>
 		@csrf
 		<div class="modal-body">
 			<div class="form-group">
@@ -128,12 +123,12 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Update Admin Profile</h4>
       </div>
-    <form enctype="multipart/form-data" action="{{ route('admins.update',$admin->id) }}" method='POST'>
+    <form enctype="multipart/form-data" action="#" method='POST'>
     @method('patch')
     @csrf
     <div class="modal-body">
       <div class="form-group">
-        <input type="hidden" name="admin_id" id="admin_id" value="{{ $admin->id }}">
+        <input type="hidden" name="admin_id" id="admin_id" value="{{}}">
         <label> Name </label>
         <input type="text" name="name" class="form-control" id="name" placeholder="Enter Your Name">
       </div>
@@ -156,7 +151,6 @@
 
   </div>
 </div>
-
 
 
 @endsection

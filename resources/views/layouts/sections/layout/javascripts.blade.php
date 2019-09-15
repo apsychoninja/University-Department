@@ -6,7 +6,6 @@
 
 		<!-- j Query -->
 		<script type="text/javascript" src="{{ asset('vendor/jquery-2.1.4.js') }}"></script>
-
 		<!-- Bootstrap JS -->
 		<script type="text/javascript" src="{{ asset('vendor/bootstrap/bootstrap.min.js') }}"></script>
 
@@ -38,9 +37,8 @@
 		<!-- Theme js -->
 		<script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
-
-	<script type="text/javascript">
-		
+		<script type="text/javascript">
+			
 $(document).ready(function(){
 			
 	$('#newsTicker15').breakingNews({
@@ -51,18 +49,4 @@ $(document).ready(function(){
 	});
 
 });
-
-
-$(document).on("change","select",function(){
-  $("option[value=" + this.value + "]", this)
-  .attr("selected", true).siblings()
-  .removeAttr("selected")
-});
-	</script>
-
-	<script id="rendered-js">
-      $(function () {
-  $('.selectpicker').selectpicker();
-});
-      //# sourceURL=pen.js
-    </script>
+		</script>

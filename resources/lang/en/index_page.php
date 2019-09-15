@@ -19,7 +19,7 @@ return [
     'of_life'=>'Of Life',
     'view_courses'=>'View Courses',
     'buy_now'=>'Buy Now',
-    'for_hundreds_of_successful_student_here'=>'for hundreds of successful student here '
+    'for_hundreds_of_successful_student_here'=>'for hundreds of successful student here ',
     'meet_your_new'=>'Meet Your New',
     'community'=>'Community',
     'learn_education'=>'Learn Education',
